@@ -16,7 +16,7 @@ def getExt(my_dir:str):
     return(fileExt)
 
 def scheduleTask():
-    file = open(r'd:\Users\Murilo\Documents\MURILO\sortFiles\schedule.txt', 'a')
+    file = open(r'sortFiles\schedule.txt', 'a')
     file.write(f'The script ran at {datetime.datetime.now()} \n')
     
 #sort files and move for respective folders
@@ -40,4 +40,4 @@ def moveFiles(my_dir:str):
     
     
 scheduleTask()
-moveFiles("D:/Users/Murilo/Downloads")
+moveFiles()
