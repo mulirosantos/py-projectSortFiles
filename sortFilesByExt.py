@@ -34,7 +34,7 @@ def moveFiles(my_dir:str):
                 os.makedirs(os.path.join(my_dir,x))
                 print(f"The folder {x} has been created succesfully")
             newPath = os.path.join(my_dir,x,c)
-            #moving files
+            #move files
             if x != '.part' and x in c and not os.path.exists(os.path.join(newPath)): #check if files not in folder
                 print(newPath)
                 shutil.move(oldPath, newPath)
