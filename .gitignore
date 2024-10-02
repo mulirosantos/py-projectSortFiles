@@ -1,0 +1,8 @@
+_pycache_/
+Lib/
+Scripts/
+pasta_teste/
+__pycache__/sortFilesByExt.cpython-311.pyc
+pyvenv.cfg
+watchdogSortFiles.py
+sortFilesByExt_v2.py
