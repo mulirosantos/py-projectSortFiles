@@ -23,7 +23,3 @@ class Files(MyDir):
         except:
             pass
 
-mydir = "d:/Users/Murilo/Documents/MURILO/sortFiles"
-listador = MyDir(mydir)
-
-print(listador.listing())
