@@ -10,16 +10,28 @@ class MyDir():
             flist = listdir(self.diretorio)
             return flist
         except FileNotFoundError:
-            print(f"This directory doesn't exist! Check again")
+            print(f"[ERROR] This directory doesn't exist! Check again")
             
 class Files(MyDir):
     def __init__(self, diretorio):
         super().__init__(diretorio)
     
-    def check_files(diretorio,flist):
+    def check_files(self):
         try:
-            myFiles = [f for f in flist if path.isfile(path.join(diretorio,f))]
+            files = MyDir(self.diretorio).listing()
+            myFiles = [f for f in files if path.isfile(path.join(self.diretorio,f))]
             return myFiles                
-        except:
-            pass
+        except FileNotFoundError:
+            print(f"[ERROR] {files} is not valid! Try again!")
+            
+    def check_dir(self):
+        try:
+            dirs = MyDir(self.diretorio).listing()
+            newDir = [d for d in dirs if path.isdir(path.join(self.diretorio,d))]
+            return newDir
+        except FileNotFoundError:
+            print(f"[ERROR]{dirs} is not valid!Try Again!")
 
+
+
+print(Files(".").check_dir())
