@@ -27,8 +27,8 @@ class Files(MyDir):
     def check_dir(self):
         try:
             dirs = MyDir(self.diretorio).listing()
-            newDir = [d for d in dirs if path.isdir(path.join(self.diretorio,d))]
-            return newDir
+            subDir = [d for d in dirs if path.isdir(path.join(self.diretorio,d))]
+            return subDir
         except FileNotFoundError:
             print(f"[ERROR]{dirs} is not valid!Try Again!")
 
