@@ -23,7 +23,12 @@ class Files(MyDir):
             return myFiles                
         except FileNotFoundError:
             print(f"[ERROR] {files} is not valid! Try again!")
-            
+
+
+class subDir(MyDir):
+    def __init__(self, diretorio):
+        super().__init__(diretorio)
+              
     def check_dir(self):
         try:
             dirs = MyDir(self.diretorio).listing()
@@ -31,7 +36,11 @@ class Files(MyDir):
             return subDir
         except FileNotFoundError:
             print(f"[ERROR]{dirs} is not valid!Try Again!")
+files = Files(".").check_files()
+
+subdir = subDir(".").check_dir()
 
 
-
-print(Files(".").check_dir())
+print(f"Arquivos:{files}")
+print(100 * "-")
+print(f"Subpastas:{subdir}")
